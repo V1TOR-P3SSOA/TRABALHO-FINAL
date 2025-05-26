@@ -1,6 +1,8 @@
 <?php
 include_once('../conexao/conection.php');
 
+$erro = "";
+
 if (isset($_POST['user_name'], $_POST['user_email'], $_POST['user_password'])) {
 
     $nome = $_POST['user_name'];
@@ -8,11 +10,11 @@ if (isset($_POST['user_name'], $_POST['user_email'], $_POST['user_password'])) {
     $senha = $_POST['user_password'];
 
     if (empty($nome)) {
-        echo "Preencha seu nome de usuário";
+        $erro = "Preencha seu nome de usuário";
     } elseif (empty($email)) {
-        echo "Preencha seu email";
+        $erro = "Preencha seu email";
     } elseif (empty($senha)) {
-        echo "Preencha sua senha";
+        $erro = "Preencha sua senha";
     } else {
 
         $sql = "SELECT * FROM usuarios WHERE user_name = :nome AND user_email = :email AND user_password = :senha";
@@ -38,7 +40,7 @@ if (isset($_POST['user_name'], $_POST['user_email'], $_POST['user_password'])) {
             header("Location: homepage.php");
             exit;
         } else {
-            echo "Falha ao logar! Usuário ou senha incorretos.";
+            $erro = "Falha ao logar! Usuário ou senha incorretos.";
         }
     }
 }
