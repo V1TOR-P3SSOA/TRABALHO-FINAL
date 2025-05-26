@@ -8,6 +8,6 @@
 </head>
 <body>
     <h1>BEM VINDO GUERREIRO</h1>
-    <a href="logout.php">sair</a>
+    <a href="codigo/logout.php">sair</a>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-    include('conexao/conection.php');
+    include('../conexao/conection.php');
     include('login.php');
 ?>
 
@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login PlantCare</title>
-    <link rel="stylesheet" href="assets/estilo.css/style.css">
+    <link rel="stylesheet" href="../assets/estilo/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="logo">
-        <img src="assets/estilo.css/logo.png" alt="Logo PlantCare">
+        <img src="../assets/estilo/logo.png" alt="Logo PlantCare">
     </div>
 
     <div id="login">
@@ -43,7 +43,7 @@
         </div>
     </form>
     </div>
-    <img src="assets/planta.png" alt="" id="plant">
+    <img src="../assets/planta.png" alt="" id="plant">
     <div id="text">
         <p>
             <p class="destaque">Olá de novo! seja bem vindo</p>ao seu gerenciador <br> de plantas <br> favorito! <br> <p class="destaque2">faça login para acessar sua conta...</p>

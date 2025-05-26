@@ -1,5 +1,5 @@
 <?php
-include_once('conexao/conection.php');
+include_once('../conexao/conection.php');
 
 if (isset($_POST['user_name'], $_POST['user_email'], $_POST['user_password'])) {
 
@@ -19,9 +19,9 @@ if (isset($_POST['user_name'], $_POST['user_email'], $_POST['user_password'])) {
 
         $stmt = $conexao->prepare($sql);
 
-        $stmt->bindParam(':nome', $nome);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':senha', $senha);
+        $stmt->bindValue(':nome', $nome);
+        $stmt->bindValue(':email', $email);
+        $stmt->bindValue(':senha', $senha);
 
         $stmt->execute();
 
