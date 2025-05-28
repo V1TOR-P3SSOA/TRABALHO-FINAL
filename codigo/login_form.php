@@ -1,6 +1,6 @@
 <?php
-    include('../conexao/conection.php');
-    include('login.php');
+    include('conection.php');
+    include_once('login.php');
 ?>
 
 <!DOCTYPE html>
@@ -20,20 +20,26 @@
         <img src="../assets/estilo/logo.png" alt="Logo PlantCare">
     </div>
 
-    <?php
-        echo $erro;
-    ?>
+    </div>
+
     <div id="container_principal">
+
+
         <form action="" method="POST">
 
             <div id="login_caixa">
+
+                <div id="erro">
+            
+                <?php if (isset($erro)){
+                    if(!empty($erro)){
+                        echo $erro;
+                    }
+                }
+                ?>
+                </div>
                 
                     <h1 id="title">Login</h1>
-                <div class="dados">
-                    <label for="user_name">Nome de usuário:</label>
-                    <input type="text" name="user_name" id="user_name">
-                </div>
-            
                 <div class="dados">
                     <label for="user_email">Email:</label>
                     <input type="text" name="user_email" id="user_email">
@@ -54,10 +60,13 @@
 
         <img src="../assets/planta.png" alt="" id="plant">
 
-        <div id="text">
-            <p>
-                <p class="destaque">Olá de novo! seja bem-vindo</p>ao seu gerenciador <br> de plantas <br> favorito! <br> <p class="destaque2">faça login para acessar sua conta...</p>
-            </p>
+        <div id="text_caixa">
+            <div id="conteudo">
+                 <p>
+                    <strong>Olá de novo! seja bem-vindo</strong> <br> ao seu gerenciador de plantas favorito! <br> <p class="decoration">faça login para acessar sua conta...</p>
+                </p>
+            </div>
+           
         </div>
     </div>
 </body>

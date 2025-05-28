@@ -5,5 +5,5 @@ if(!isset($_SESSION)){
 
 session_destroy();
 
-header("Location: form.php")
+header("Location: ../index.php");
 ?>

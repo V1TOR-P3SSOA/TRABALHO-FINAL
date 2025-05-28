@@ -8,18 +8,17 @@
 
 body {
     background: linear-gradient(to right, #A4C2A5 60%, #41523a 40%);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    margin-left: 200px;
 }
 
 #container_principal{
     display: flex;
-    height: 100vh;
+    align-items: center;
 }
 
 #plant{
+    position: absolute;
+    left: 694px;
+    top: -40px;
     width: 250px;
 }
 
@@ -27,11 +26,12 @@ body {
 #login_caixa {
     background-color: #D9D9D9;
     padding: 40px;
+    margin-left: 210px;
+    margin-top: -50px;
     border-radius: 15px;
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
-    width: 50%;
-    max-width: 450px;
-    height: 430px;
+    width: 400px;
+    height: auto;
 }
 
 #title {
@@ -41,6 +41,11 @@ body {
     color: #2e2e2e;
 }
 
+#erro{
+    color: red;
+    text-align: center;
+    padding-bottom: 10px;
+}
 .dados {
     display: flex;
     flex-direction: column;
@@ -67,7 +72,8 @@ body {
 }
 
 #submit button {
-    width: 100%;
+    width: 50%;
+    margin-top: 20px;
     padding: 10px;
     background-color: #A4C2A5;
     border: none;
@@ -82,20 +88,24 @@ body {
     background-color: #41523a;
 }
 
-#text{
-    color: #ffffff;
-    font-size: 45px;
-    margin-bottom: 500px;
+#text_caixa{
+    position: relative;
     text-align: left;
-    margin-right: 300px;
+    height: auto;
+    margin-top: 50px;
+    margin-bottom: 500px;
+    margin-right: 50px;
+    margin-left: 350px;
 }
 
-.destaque{
-    font-weight: bold;
+#conteudo{
+    color: #ffffff;
+    font-size: 20px;
 }
 
-.destaque2{
-    font-size: small;
+.decoration{
+    font-size: 15px;
+    padding-top: 5px;
 }
 
 .logo {
