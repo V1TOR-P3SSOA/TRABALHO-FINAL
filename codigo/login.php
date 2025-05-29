@@ -15,19 +15,20 @@ if (isset($_POST['user_email'], $_POST['user_password'])) {
     } elseif (empty($email)){
         $erro = "Preencha seu email";
     }else {
-        $sql = "SELECT * FROM usuarios WHERE user_email = :email AND user_password = :senha";
-        $stmt = $conexao->prepare($sql);
-        $stmt->bindValue(':email', $email);
-        $stmt->bindValue(':senha', $senha);
-        $stmt->execute();
+        $sql = "SELECT * FROM usuarios WHERE user_email = '$email' AND user_password = '$senha'";
+        $stmt = $conexao->query($sql);
 
-        if ($stmt->rowCount() > 0) {
-            $user = $stmt->fetch();
+        if ($stmt->rowCount() == 1) {
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if(!isset($_SESSION)){
+                session_start();
+            }
 
             $_SESSION['id_user'] = $user['id_user'];
-            $_SESSION['user_email'] = $user['user_email'];
+            $_SESSION['user_name'] = $user['user_name'];
 
-            header("Location:../index.php");
+            header("Location: ../index.php");
             exit;
         } else {
             $erro = "Usuário ou senha incorretos!";

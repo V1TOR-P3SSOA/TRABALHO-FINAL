@@ -1,14 +1,16 @@
+
 <?php
-    include('conection.php');
-    include_once('login.php');
+include_once ('login.php');
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login PlantCare</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../assets/estilo/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,58 +18,58 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="logo">
-        <img src="../assets/estilo/logo.png" alt="Logo PlantCare">
-    </div>
 
-    </div>
+    <form method="post">
 
-    <div id="container_principal">
-
-
-        <form action="" method="POST">
-
-            <div id="login_caixa">
-
-                <div id="erro">
-            
-                <?php if (isset($erro)){
-                    if(!empty($erro)){
-                        echo $erro;
-                    }
-                }
-                ?>
-                </div>
-                
-                    <h1 id="title">Login</h1>
-                <div class="dados">
-                    <label for="user_email">Email:</label>
-                    <input type="text" name="user_email" id="user_email">
-                </div>
-                
-                <div class="dados">
-                    <label for="user_password">Senha:</label>
-                    <input type="password" name="user_password" id="user_password">
-                </div>
-                
-                <div id="submit">
-                    <button type="submit">Entrar</button>
+        <div id = "container_principal">
+                <div id ="Logo_container">
+                    <img src="../assets/estilo/logo.png" alt="Logo" id="Logo">
                 </div>
 
-            </div>
-            
-        </form>
+            <div id = "login_caixa">
+                <div id = "erro">
+                    <?php 
+                        if (isset($erro)) {
+                            if (!empty($erro)) {
+                                echo $erro;
+                            }
+                        }
+                    ?>
+                </div>
+                <h2>Login</h2>
 
-        <img src="../assets/planta.png" alt="" id="plant">
+                <div class = "campo">
+                        <label for="user_email">email</label>
+                        <input type="email" name = "user_email" id = "user_email" placeholder = "Email">
+                </div>
 
-        <div id="text_caixa">
-            <div id="conteudo">
-                 <p>
-                    <strong>Olá de novo! seja bem-vindo</strong> <br> ao seu gerenciador de plantas favorito! <br> <p class="decoration">faça login para acessar sua conta...</p>
+                <div class = "campo">
+                        <label for="user_password">senha:</label>
+                        <input type="password" name = "user_password" id = "user_password" placeholder = "Senha">
+                </div>
+
+                <p id = "cadastro_link">
+                    Não tem uma conta? Crie uma aqui!
                 </p>
+
+                <button type ="submit" id ="login_botao">LOGIN</button>
             </div>
-           
+    </form>
+            
+            <div id = "divisao">
+                <h1 id="texto_divisao1">
+                    <strong>Olá denovo! Seja bem vindo</strong> 
+                    ao seu gerenciador de plantas
+                    favorito!
+                    faça login para acessar sua conta...
+                </h1>
+                <p id="texto_divisao2">
+                    Faça o login para acessar sua conta...
+                </p>
+
+                <img src="../assets/estilo/planta.png" alt="Ilustração" id="plant">
+            </div>
         </div>
-    </div>
+
 </body>
 </html>
