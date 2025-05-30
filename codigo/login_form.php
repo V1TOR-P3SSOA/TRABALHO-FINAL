@@ -1,7 +1,5 @@
-
 <?php
 include_once ('login.php');
-
 ?>
 
 
@@ -22,9 +20,10 @@ include_once ('login.php');
     <form method="post">
 
         <div id = "container_principal">
-                <div id ="Logo_container">
-                    <img src="../assets/estilo/logo.png" alt="Logo" id="Logo">
+                <div id ="logo_container">
+                    <img src="../assets/estilo/logo.png" alt="logo" id="logo">
                 </div>
+
 
             <div id = "login_caixa">
                 <div id = "erro">
@@ -39,12 +38,12 @@ include_once ('login.php');
                 <h2>Login</h2>
 
                 <div class = "campo">
-                        <label for="user_email">email</label>
+                        <label for="user_email">Email</label>
                         <input type="email" name = "user_email" id = "user_email" placeholder = "Email">
                 </div>
 
                 <div class = "campo">
-                        <label for="user_password">senha:</label>
+                        <label for="user_password">Senha:</label>
                         <input type="password" name = "user_password" id = "user_password" placeholder = "Senha">
                 </div>
 
@@ -55,19 +54,20 @@ include_once ('login.php');
                 <button type ="submit" id ="login_botao">LOGIN</button>
             </div>
     </form>
-            
+
+            <img src="../assets/estilo/planta.png" alt="" id="plant">
+
             <div id = "divisao">
-                <h1 id="texto_divisao1">
-                    <strong>Olá denovo! Seja bem vindo</strong> 
-                    ao seu gerenciador de plantas
-                    favorito!
-                    faça login para acessar sua conta...
-                </h1>
+                <div id="text">
+                    <h1 id="texto_divisao1">
+                        <strong>Olá novamente! Seja bem vindo</strong> ao seu gerenciador de plantas
+                        favorito!
+                    </h1>
                 <p id="texto_divisao2">
                     Faça o login para acessar sua conta...
                 </p>
-
-                <img src="../assets/estilo/planta.png" alt="Ilustração" id="plant">
+                </div>
+                
             </div>
         </div>
 
