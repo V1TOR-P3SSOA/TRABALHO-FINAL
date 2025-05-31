@@ -26,6 +26,7 @@ include_once ('login.php');
 
 
             <div id = "login_caixa">
+
                 <div id = "erro">
                     <?php 
                         if (isset($erro)) {
@@ -35,20 +36,21 @@ include_once ('login.php');
                         }
                     ?>
                 </div>
-                <h2>Login</h2>
+
+                <h2 id="titulo_login">Login</h2>
 
                 <div class = "campo">
                         <label for="user_email">Email</label>
-                        <input type="email" name = "user_email" id = "user_email" placeholder = "Email">
+                        <input type="email" name = "user_email" id = "user_email" placeholder = "Ex.: user@gmail.com">
                 </div>
 
                 <div class = "campo">
                         <label for="user_password">Senha:</label>
-                        <input type="password" name = "user_password" id = "user_password" placeholder = "Senha">
+                        <input type="password" name = "user_password" id = "user_password" placeholder = "Ex.: 12345">
                 </div>
 
                 <p id = "cadastro_link">
-                    Não tem uma conta? Crie uma aqui!
+                    Não tem uma conta? <u>Crie uma aqui!</u>
                 </p>
 
                 <button type ="submit" id ="login_botao">LOGIN</button>
@@ -60,7 +62,7 @@ include_once ('login.php');
             <div id = "divisao">
                 <div id="text">
                     <h1 id="texto_divisao1">
-                        <strong>Olá novamente! Seja bem vindo</strong> ao seu gerenciador de plantas
+                        <b>Olá novamente! Seja bem vindo</b> ao seu gerenciador de plantas
                         favorito!
                     </h1>
                 <p id="texto_divisao2">

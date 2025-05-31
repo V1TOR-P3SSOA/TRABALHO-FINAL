@@ -46,7 +46,7 @@ body {
   width: 50%;
   background-color: #D9D9D9;
   border-radius: 10px;
-  padding: 30px;
+  padding: 15px;
   margin: auto;
   margin-left: 15%;
   max-width: 400px;
@@ -54,15 +54,15 @@ body {
   text-align: center;
 }
 
-#login_caixa h2 {
+#titulo_login{
   font-size: 30px;
-  padding-bottom: 15px;
   font-weight: lighter;
 }
 
 #login_caixa input {
   width: 95%;
-  padding: 12px;
+  height: 30px;
+  padding: 10px;
   margin: 10px 0;
   border: none;
   background-color: #A3A3A3;
@@ -118,7 +118,7 @@ body {
 #texto_divisao1 {
   font-size: 30px;
   line-height: 1;
-  font-weight: lighter;
+  font-weight: 400;
   text-align: left;
 }
 
@@ -128,11 +128,7 @@ body {
   line-height: 0.3;
 }
 
-.destaque {
-  font-weight: bold;
-  line-height: 1;
-}
-
 #erro {  
   color: #566246;
+  padding: 10px;
 }
