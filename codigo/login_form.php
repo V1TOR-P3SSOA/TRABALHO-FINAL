@@ -50,7 +50,7 @@ include_once ('login.php');
                 </div>
 
                 <p id = "cadastro_link">
-                    Não tem uma conta? <u>Crie uma aqui!</u>
+                    <a href="cadastro_form.php">Não tem uma conta? <u>Crie uma aqui!</u></a>
                 </p>
 
                 <button type ="submit" id ="login_botao">LOGIN</button>

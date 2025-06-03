@@ -76,13 +76,17 @@ body {
 }
 
 #cadastro_link {
-  color: rgba(0, 0, 0, 0.7);
   text-align: center;
   font-size: 14px;
 }
 
-#cadastro_link:hover {
-  color: #566246;
+#cadastro_link a{
+  text-decoration: none;
+  color: #000000;
+}
+
+#cadastro_link a:hover {
+  color: #536953;
   transition: 100ms;
   cursor: pointer;
 }
