@@ -69,8 +69,10 @@ include_once('conection.php');
             </div>
 
             <div id="divisao">
-                <div id="texto_divisao">
-                    <p><strong>Seja bem vindo!</strong> é <br> sempre um prazer <br> recceber novos usuários...<br></p>
+                <div id="texto">
+                    <h1 id="testo_divisao1">
+                        <strong>Seja bem vindo!</strong> é <br> sempre um prazer <br> receber novos usuários...<br>
+                    </h1>
                     <p id="texto_divisao2">insira seus dados para realizar o cadastro</p>
                 </div>
 
