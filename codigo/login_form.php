@@ -9,11 +9,8 @@ include_once ('login.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="../assets/estilo/style.css">
+    <link rel="stylesheet" href="../assets/estilo/style_login.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -53,7 +50,7 @@ include_once ('login.php');
                     <a href="cadastro_form.php">Não tem uma conta? <u>Crie uma aqui!</u></a>
                 </p>
 
-                <button type ="submit" id ="login_botao">LOGIN</button>
+                <button type ="submit" id ="login_botao">Login</button>
             </div>
     </form>
 
