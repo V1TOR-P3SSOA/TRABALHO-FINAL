@@ -5,33 +5,36 @@ $erro = '';
 
 if (isset($_POST['user_email'], $_POST['user_password'])) {
 
-    $email = $_POST['user_email'];
-    $senha = $_POST['user_password'];
+    $email = trim($_POST['user_email']);
+    $senha = trim($_POST['user_password']);
 
     if (empty($email) && empty($senha)) {
         $erro = "Preencha seus dados antes de logar!";
     } elseif (empty($senha)) {
         $erro = "Preencha sua senha!";
-    } elseif (empty($email)){
-        $erro = "Preencha seu email";
-    }else {
-        $sql = "SELECT * FROM usuarios WHERE user_email = '$email' AND user_password = '$senha'";
-        $stmt = $conexao->query($sql);
+    } elseif (empty($email)) {
+        $erro = "Preencha seu email!";
+    } else {
+        $sql = "SELECT * FROM usuarios WHERE user_email = ?";
+        $stmt = $conexao->prepare($sql);
+        $stmt->execute([$email]);
 
-        if ($stmt->rowCount() == 1) {
+        if ($stmt->rowCount() > 0) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            if(!isset($_SESSION)){
+            // Agora sim: a comparação da senha usando password_verify
+            if (password_verify($senha, $user['user_password'])) {
                 session_start();
+                $_SESSION['id_user'] = $user['id_user'];
+                $_SESSION['user_name'] = $user['user_name'];
+
+                header("Location: ../index.php");
+                exit;
+            } else {
+                $erro = "Email ou senha incorretos!";
             }
-
-            $_SESSION['id_user'] = $user['id_user'];
-            $_SESSION['user_name'] = $user['user_name'];
-
-            header("Location: ../index.php");
-            exit;
         } else {
-            $erro = "Usuário ou senha incorretos!";
+            $erro = "Email ou senha incorretos!";
         }
     }
 }
