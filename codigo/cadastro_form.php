@@ -16,7 +16,7 @@ include_once('conection.php');
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <form method="post">
+    <form method="post" action="cadastro.php">
 
         <div id="container_principal">
 
