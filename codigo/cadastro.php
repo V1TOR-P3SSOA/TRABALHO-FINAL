@@ -6,6 +6,8 @@
     $grad= trim($_POST['user_graduation']);
     $password = trim($_POST['user_password']);
 
+    $aviso = "";
+
     if(!empty($_POST['user_graduation'])){
         $type = 1;
     } else {
@@ -27,7 +29,9 @@
 
             if($stmt->execute()){
                 if($stmt->rowCount() > 0) {
-                    echo "dados cadastrados com sucesso!";
+                    session_start();
+                    $_SESSION['aviso'] = "Dados cadastrados com sucesso! Prossiga e faça seu login...";
+                    header('Location: login_form.php');
                     $user = $email = $password = $grad = $type = null;
                 } else {
                     echo "erro ao efetuar o cadastro";
