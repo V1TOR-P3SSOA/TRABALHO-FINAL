@@ -1,5 +1,6 @@
 <i?php
 include_once('conection.php');
+include_once('cadastro.php');
 ?>
 
 <!DOCTYPE html>
