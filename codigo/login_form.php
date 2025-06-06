@@ -2,6 +2,18 @@
 include_once ('login.php');
 ?>
 
+<?php
+    session_start();
+    $aviso = '';
+    if (isset($_SESSION['aviso'])) {
+
+        $aviso = $_SESSION['aviso'];
+
+        unset($_SESSION['aviso']);
+        
+    }
+?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -24,6 +36,8 @@ include_once ('login.php');
 
             <div id = "login_caixa">
 
+                <h2 id="titulo_login">Login</h2>
+
                 <div id = "erro">
                     <?php 
                         if (isset($erro)) {
@@ -34,7 +48,15 @@ include_once ('login.php');
                     ?>
                 </div>
 
-                <h2 id="titulo_login">Login</h2>
+                <div id="aviso">
+                    <?php
+                        if(isset($aviso)){
+                            if (!empty($aviso)) {
+                                echo $aviso;
+                            }
+                        }
+                    ?>
+                </div>
 
                 <div class = "campo">
                         <label for="user_email">Email</label>
