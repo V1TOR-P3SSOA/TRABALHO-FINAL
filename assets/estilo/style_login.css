@@ -133,6 +133,11 @@ body {
 }
 
 #erro {  
-  color: #566246;
+  color: #ff0000;
   padding: 10px;
+}
+
+#aviso{
+  color: #35a535;
+  padding-bottom: 10px;
 }
