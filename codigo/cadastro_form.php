@@ -1,5 +1,16 @@
-<i?php
-include_once('conection.php');
+<?php
+    session_start();
+    $aviso = '';
+    if (isset($_SESSION['aviso'])) {
+
+        $aviso = $_SESSION['aviso'];
+
+        unset($_SESSION['aviso']);
+        
+    }
+?>
+
+<?php
 include_once('cadastro.php');
 ?>
 
@@ -28,36 +39,48 @@ include_once('cadastro.php');
             <div id="cadastro_container">
                 <h1 id="titulo_cadastro">Cadastro</h1>
 
+                <div id="aviso">
+                    <?php
+                        if(isset($aviso)){
+                            if (!empty($aviso)) {
+                                echo $aviso;
+                            }
+                        }
+                    ?>
+                </div>
+
                 <div class="campo">
-                    <label for="user_name">Nome de usuário</label>
+                    <label for="user_name">Nome de usuário *</label>
                     <input type="text" name = "user_name" id = "user_name" placeholder = "Ex.: Vítor Pessôa">
                 </div>
 
                 <div class="campo">
-                    <label for="user_email">E-mail</label>
+                    <label for="user_email">E-mail *</label>
                     <input type="email" name = "user_email" id = "user_email" placeholder = "Ex.: user@gmail.com">
                 </div>
 
                 <div class="campo">
                     <label for="user_graduation">Especialização</label>
-                    <input type="text" name = "user_graduation" id = "user_graduation" list="especializacao">
-                    <datalist id="especializacao">
 
-                        <option value="Biologia">Grad 1</option>
+                    <select name="user_graduation" id="user_graduation">
+                        <option value="" disabled selected> </option>
 
-                        <option value="Agrônomia">Grad 2</option>
+                        <option value="Agronomia">Agronomia</option>
 
-                        <option value="Botânica">Grad 3</option>
+                        <option value="Botânica">Botânica</option>
 
-                        <option value="Horticultura">Grad 4</option>
+                        <option value="Horticultura">Horticultura</option>
 
-                        <option value="Téc.Agricultura">Grad 5</option>
+                        <option value="Biologia">Biologia</option>
 
-                    </datalist>
+                        <option value="Floricultura">Floricultura</option>
+                        
+                        <option value="Silvicultura">Silvicultura</option>
+                    </select>
                 </div>
 
                 <div class="campo">
-                    <label for="user_password">Senha</label>
+                    <label for="user_password">Senha *</label>
                     <input type="password" name="user_password" id="user_password" placeholder="Ex.:12345">
                 </div>
                 
@@ -78,7 +101,7 @@ include_once('cadastro.php');
                 </div>
 
                 <div id="decoracao">
-                    <img src="../assets/estilo/pessoas_planta" alt="">
+                    <img src="../assets/estilo/pessoas_planta.png" alt="">
                 </div>
             </div>
 
