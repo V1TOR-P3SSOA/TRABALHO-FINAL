@@ -3,7 +3,7 @@
 
     $user = trim($_POST['user_name']);
     $email = trim($_POST['user_email']);
-    $grad= trim($_POST['user_graduation']);
+    $grad= $_POST['user_graduation'];
     $password = trim($_POST['user_password']);
 
     $aviso = "";
@@ -15,6 +15,16 @@
     }
 
     if(!empty($_POST['user_name'])){
+
+        if(empty($user) && empty($email) && empty($password)){
+            $aviso = "Preencha todos os campos obrigatórios!";
+        } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $aviso = "E-mail inválido!";
+        } elseif(strlen($password) < 6){
+            $aviso = "A senha deve ter pelo menos 6 caracteres!";
+        } else {
+            $aviso = "";
+        }
 
         $crip_password = password_hash($password, PASSWORD_DEFAULT);
 
