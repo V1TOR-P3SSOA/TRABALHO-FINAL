@@ -22,7 +22,6 @@ if (isset($_POST['user_email'], $_POST['user_password'])) {
         if ($stmt->rowCount() > 0) {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-            // Agora sim: a comparação da senha usando password_verify
             if (password_verify($senha, $user['user_password'])) {
                 session_start();
                 $_SESSION['id_user'] = $user['id_user'];
