@@ -10,10 +10,6 @@
     }
 ?>
 
-<?php
-include_once('cadastro.php');
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,12 +46,12 @@ include_once('cadastro.php');
                 </div>
 
                 <div class="campo">
-                    <label for="user_name">Nome de usuário *</label>
+                    <label for="user_name">Nome de usuário</label>
                     <input type="text" name = "user_name" id = "user_name" placeholder = "Ex.: Vítor Pessôa">
                 </div>
 
                 <div class="campo">
-                    <label for="user_email">E-mail *</label>
+                    <label for="user_email">E-mail</label>
                     <input type="email" name = "user_email" id = "user_email" placeholder = "Ex.: user@gmail.com">
                 </div>
 
@@ -80,7 +76,7 @@ include_once('cadastro.php');
                 </div>
 
                 <div class="campo">
-                    <label for="user_password">Senha *</label>
+                    <label for="user_password">Senha</label>
                     <input type="password" name="user_password" id="user_password" placeholder="Ex.:12345">
                 </div>
                 
