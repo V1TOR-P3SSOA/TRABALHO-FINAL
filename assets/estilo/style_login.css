@@ -11,14 +11,14 @@ body {
   height: 100vh;
 }
 
-#planta_dec {
+#planta{
   width: auto;
   z-index: 1;
 }
 
 #plant{
-  width: 50%;
-  height: 75%;
+  width: 65%;
+  height: 65%;
   max-width: 270px;
   position: relative;
   left: 136px;
@@ -29,7 +29,7 @@ body {
   position: absolute;
   top: 8px;
   left: 8px;
-  background-color: white;
+  background-color: #ffffff;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -60,7 +60,7 @@ body {
 }
 
 #login_caixa input {
-  width: 100%;
+  width: 95%;
   height: 5%;
   padding: 10px;
   margin: 10px 0;
