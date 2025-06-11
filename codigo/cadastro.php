@@ -41,8 +41,8 @@
                     if ($stmt->execute()) {
                         if ($stmt->rowCount() > 0) {
                             session_start();
+                            header('Location: ../index.php');
                             $_SESSION['aviso'] = "Dados cadastrados com sucesso! Prossiga e faça seu login...";
-                            header('Location: login_form.php');
                             exit;
                         } else {
                             $aviso = "Erro ao efetuar o cadastro.";
