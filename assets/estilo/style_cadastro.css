@@ -13,7 +13,7 @@ body {
 
 #cadastro_container {
   width: 50%;
-  height: 55%;
+  height: auto;
   max-width: 450px;
   background-color: #D9D9D9;
   border-radius: 10px;
@@ -109,7 +109,7 @@ body {
 
 #divisao {
   width: 30%;
-  height: 100vh;
+  height: auto;
   background-color: #566246;
   display: flex;
   flex-direction: column;
