@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background-color: #D8DAD3;
+}
+
+#dashboard {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+#left_bar {
+    background-color: #566246;
+    height: 100vh;
+    width: 20%;;
+}
+
+#logo{
+    background-color: #A4C2A5;
+    display: flex;
+    align-items: center;
+}
+
+#logo img{
+    width: 30%;
+    height: 30%;
+}
+
+#cadastro_planta_container {
+    width: 60%;
+    background-color: #A4C2A5;
+    margin-left: 20%;
+    padding: 1%;
+    margin: 1%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#cadastro_header{
+    background-color: #F5F5F5;
+    width: 80%;
+    border-radius: 5px;
+    padding: 1%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#email{
+    border: #000000 1px solid;
+    border-left: none;
+    border-right: none;
+}
+
+.campo{
+    background-color: #F5F5F5;
+    width: 60%;
+    margin: 1%;
+    border-radius: 5px;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    font-size:small;
+}
+.campo input{
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background:transparent;
+}
+.nav{
+    display: flex;
+    flex-direction: column
+}
+.nav a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
