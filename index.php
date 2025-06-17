@@ -14,10 +14,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>homepage</title>
+    <title>dashboard</title>
+    <link rel="stylesheet" href="assets/estilo/index_style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>BEM VINDO GUERREIRO</h1>
-    <a href="codigo/logout.php">sair</a>
+    <div id="dashboard">
+
+        <div id="left_bar">
+            <div id="logo">
+                <img src="assets/estilo/logo.png" alt="">
+                <h1>Plantcare</h1>
+            </div>
+            
+
+            <div class="nav">
+                <a href="index.php">Painel</a>
+                <a href="codigo/cadastro_planta_form.php">Catálogo</a>
+            </div>
+            
+        </div>
+
+        <!-- <a href="codigo/logout.php">voltar para o login</a> -->
+    </div>
+    
 </body>
 </html>
