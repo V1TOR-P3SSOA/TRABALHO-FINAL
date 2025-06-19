@@ -1,4 +1,8 @@
 <?php
+include_once("create_plant.php");
+?>
+
+<?php
 
     if(!isset($_SESSION)){
         session_start();
@@ -6,6 +10,27 @@
 
     if(!isset($_SESSION['id_user'])){
         header('Location: codigo/login_form.php');
+    }
+
+    $aviso = '';
+    if (isset($_SESSION['aviso'])) {
+
+        $aviso = $_SESSION['aviso'];
+
+        unset($_SESSION['aviso']);
+        
+    }
+?>
+
+<?php
+
+    $erro = '';
+    if (isset($_SESSION['erro'])) {
+
+        $erro = $_SESSION['erro'];
+
+        unset($_SESSION['erro']);
+        
     }
 ?>
 
@@ -19,29 +44,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="dashboard">
 
-        <div id="left_bar">
-            <div id="logo">
-                <img src="../assets/estilo/logo.png" alt="">
-                <h1>Plantcare</h1>
-            </div>
+    <div id="left_bar">
 
-            <div class="nav">
-                <a href="../index.php">Painel</a>
-                <a href="cadastro_planta_form.php">Catálogo</a>
-            </div>
-            
+        <div id="logo">
+            <img src="../assets/estilo/logo.png" alt="">
+            <h1>Plantcare</h1>
         </div>
 
-            <div id="cadastro_planta_container">
+        <div class="nav">
+            <a href="../index.php">Painel</a>
+            <a href="cadastro_planta_form.php">Catálogo</a>
+            <a href=""></a>
+        </div>
+            
+    </div>
 
-                <div id="header_cadastro_planta">
+    <div id="dashboard">
+
+    <div id="cadastro_planta_container">
+        <form method="post" action="create_plant.php">
+            <div id="header_cadastro_planta">
                     
                     <div id="cadastro_header">
 
                         <div id="titulo">
-                            <h1>Cadastro de Planta</h1>
+                            <h2>Cadastro de Planta</h2>
                         </div>
                         
                         <div id="email">
@@ -50,10 +78,36 @@
 
                         <div class="texto_decoracao">
                             <p>todas as alterações ficam salvas no <u>catálogo</u></p>
-                        </div>
 
+
+                            <div id="aviso">
+                                <?php
+                                    if(isset($aviso)){
+
+                                        if (!empty($aviso)) {
+
+                                            echo $aviso;
+
+                                        }
+                                    }
+                                ?>
+                            </div>
+
+                            <div id="erro">
+                                <?php
+                                    if(isset($erro)){
+
+                                        if (!empty($erro)) {
+
+                                            echo $erro;
+
+                                        }
+                                    }
+                                ?>
+                            </div>
+                        </div>
+                        
                     </div>
-                    
                     <div class="campo">
                         <label for="nome_planta">Nome popular:</label>
                         <input type="text" id="nome_planta" name="nome_planta">
@@ -79,15 +133,17 @@
                         <input type="text" id="cuidados_gerais" name="cuidados_gerais">
                     </div>
                     
-                    <div id="botao_cadastro">
-                        <button type="submit" id="botao_cadastrar">Cadastrar</button>
+                    <div id="botao_registro">
+                        <button type="submit" id="botao_registro">Registar</button>
                     </div>
                 </div>
 
             </div>
-
-        <!-- <a href="logout.php">voltar para o login</a> -->
+        </form>
     </div>
+                
+
+            
     
 </body>
 </html>
