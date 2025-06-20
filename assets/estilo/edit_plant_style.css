@@ -31,7 +31,7 @@ body {
 
 .campo{
     background-color: #F5F5F5;
-    width: 98%;
+    width: 97%;
     margin: 5px;
     margin-left: 2px;
     border-radius: 5px;
@@ -55,4 +55,63 @@ body {
 .nav a{
     color: #ffffff;
     text-decoration: none;
+}
+
+#conteudo_principal{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    margin-left: 15%;
+}
+
+#edit_form{
+    width: 100%;
+    height: auto;
+    max-height: 570px;
+    background-color: #A4C2A5;
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+#edit_titulo{
+    background-color: #F5F5F5;
+    border-radius: 5px;
+}
+#edit_titulo h2{
+    text-align: center;
+}
+
+#botoes_acao{
+    display: flex;
+}
+
+#button_cancelar button{
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    border: none;
+    background-color: #f71b1b;
+    margin-right: 10px;
+}
+
+#button_cancelar button:hover{
+    cursor: pointer;
+    background-color: #a31515;
+    transition: 0.5s;
+}
+
+#button_salvar button{
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 5px;
+    border: none;
+    background-color: #577558;
+}
+
+#button_salvar button:hover{
+    cursor: pointer;
+    background-color: #3b613d;
+    transition: 0.5s;
 }
