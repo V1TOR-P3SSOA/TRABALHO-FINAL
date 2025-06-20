@@ -10,5 +10,5 @@ if (isset($_GET['id'])) {
         $stmt->execute([$id]);
     }
 }
-header("Location: read_plant.php");
+header("Location: cadastro_planta_form.php");
 exit;
