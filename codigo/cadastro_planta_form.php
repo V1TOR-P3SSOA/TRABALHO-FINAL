@@ -1,8 +1,4 @@
 <?php
-include_once("create_plant.php");
-?>
-
-<?php
 
     if(!isset($_SESSION)){
         session_start();
@@ -54,8 +50,8 @@ include_once("create_plant.php");
 
         <div class="nav">
             <a href="../index.php">Painel</a>
-            <a href="cadastro_planta_form.php">Catálogo</a>
-            <a href=""></a>
+            <a href="cadastro_planta_form.php">Registro de nova planta</a>
+            <a href="read_plant.php">Plantas registradas</a>
         </div>
             
     </div>
@@ -69,7 +65,8 @@ include_once("create_plant.php");
                     <div id="cadastro_header">
 
                         <div id="titulo">
-                            <h2>Cadastro de Planta</h2>
+                            <!-- <div>.</div> -->
+                            <h2>Registro de Planta</h2>
                         </div>
                         
                         <div id="email">
@@ -134,7 +131,7 @@ include_once("create_plant.php");
                     </div>
                     
                     <div id="botao_registro">
-                        <button type="submit" id="botao_registro">Registar</button>
+                        <button type="submit">Registar</button>
                     </div>
                 </div>
 
