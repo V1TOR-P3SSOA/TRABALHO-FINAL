@@ -51,6 +51,7 @@
         <div class="nav">
             <a href="../index.php">Painel</a>
             <a href="cadastro_planta_form.php">Registro de nova planta</a>
+            <a href="tarefas_form.php">Tarefas</a>
         </div>
             
     </div>
