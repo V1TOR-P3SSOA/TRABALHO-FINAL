@@ -31,6 +31,7 @@
             <div class="nav">
                 <a href="index.php">Painel</a>
                 <a href="codigo/cadastro_planta_form.php">Registro de nova planta</a>
+                <a href="codigo/tarefas_form.php">Tarefas</a>
             </div>
             
         </div>
