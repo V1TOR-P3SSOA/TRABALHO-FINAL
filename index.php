@@ -24,7 +24,7 @@
         <div id="left_bar">
             <div id="logo">
                 <img src="assets/estilo/logo.png" alt="">
-                <h1>Plantcare</h1>
+                <h2>Plantcare</h2>
             </div>
             
 
@@ -36,7 +36,7 @@
             
         </div>
 
-        <!-- <a href="codigo/logout.php">voltar para o login</a> -->
+        <a href="codigo/logout.php">voltar para o login</a>
     </div>
     
 </body>
