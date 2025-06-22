@@ -45,7 +45,7 @@
 
         <div id="logo">
             <img src="../assets/estilo/logo.png" alt="">
-            <h1>Plantcare</h1>
+            <h2>Plantcare</h2>
         </div>
 
         <div class="nav">
