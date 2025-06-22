@@ -181,7 +181,7 @@ body {
 }
 
 .tabela table thead th {
-    background-color: #84e987;
+    background-color: #38813b;
     color: #000000;
     font-weight: bold;
     padding: 10px;
@@ -308,7 +308,7 @@ body {
 .tabela thead th {
   position: sticky;
   top: 0;
-  background-color: #84e987;
+  background-color: #38813b;
   color: #fff;
   padding: 10px;
   z-index: 5;
