@@ -7,6 +7,27 @@
     if(!isset($_SESSION['id_user'])){
         header('Location: codigo/login_form.php');
     }
+
+    $aviso = '';
+    if (isset($_SESSION['aviso'])) {
+
+        $aviso = $_SESSION['aviso'];
+
+        unset($_SESSION['aviso']);
+        
+    }
+?>
+
+<?php
+
+    $erro = '';
+    if (isset($_SESSION['erro'])) {
+
+        $erro = $_SESSION['erro'];
+
+        unset($_SESSION['erro']);
+        
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +44,7 @@
 
         <div id="logo">
             <img src="../assets/estilo/logo.png" alt="">
-            <h1>Plantcare</h1>
+            <h2>Plantcare</h2>
         </div>
 
         <div class="nav">
@@ -35,15 +56,15 @@
     </div>
 
     <div id="conteudo_principal">
-        <div id="cadastro_planta_container">
-            <form method="post" action="create_plant.php">
-                <div id="header_cadastro_planta">
+        <div id="cadastro_task_container">
+            <form method="post" action="create_task.php">
+                <div id="header_cadastro_task">
                         
                         <div id="cadastro_header">
 
                             <div id="titulo">
                                 <div>.</div>
-                                <h2>Registro de Planta</h2>
+                                <h2>Registro de nova tarefa</h2>
                             </div>
 
                             <div class="texto_decoracao">
@@ -77,9 +98,14 @@
                                 </div>
                             </div> 
                         </div>
+
+                        <div class="campo">
+                            <label for="planta_selecionada">ID da planta:</label>
+                            <input type="number" id="planta_selecionada" name="planta_selecionada">
+                        </div>
                         <div class="campo">
                             <label for="descricao_task">Descrição da tarefa: </label>
-                            <textarea id="descricao_task" name="descricao_task" rows="8" cols="50"></textarea>
+                            <input type="text" id="descricao_task" name="descricao_task">
                         </div>
 
                         <div class="campo">
@@ -113,6 +139,58 @@
                 </div>
             </form>
         </div>
+
+        <?php
+            require_once('conection.php');
+            $stmt = $conexao->query("SELECT t.id_task, t.plant_id, t.prioridade, t.data_criacao, t.status, p.popular_name  FROM tarefas AS t INNER JOIN plantas AS p ON t.plant_id = p.id_plant");
+            $tarefas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <div id="registros">
+            <div class="bg">
+                <h2>Registro de tarefas</h2>
+                <div class="tabela">
+                    <table border="1" cellpadding="5" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>ID da tarefa</th>
+                                <th>ID planta</th>
+                                <th>Nome popular</th>
+                                <th>Prioridade</th>
+                                <th>Data</th>
+                                <th>Status</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>   
+                        <tbody>
+                            <?php foreach ($tarefas as $tarefas): ?>
+                                <tr>
+                                    <td><?= htmlspecialchars($tarefas['id_task']) ?></td>
+                                    <td><?= htmlspecialchars($tarefas['plant_id']) ?></td>
+                                    <td><?= htmlspecialchars($tarefas['popular_name']) ?></td>
+                                    <td><?= htmlspecialchars($tarefas['prioridade']) ?></td>
+                                    <td><?= htmlspecialchars($tarefas['data_criacao']) ?></td>
+                                    <td><?= htmlspecialchars($tarefas['status']) ?></td>
+                                    <td class="acoes">
+                                        <a href="edit_task.php?id=<?= $tarefas['id_task'] ?>"><button  class="button_editar">Editar</button></a>
+                                        <button class="button_excluir" onclick="confirmExclusion(<?= $tarefas['id_task'] ?>)">Excluir</button>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>         
+                </div>
+            </div>
+                
+        </div>
+
+        <script>
+            function confirmExclusion(id_task) {
+                if (confirm('Você realmente quer excluir essa tarefa? (essa ação não é reversível)')) {
+                window.location.href = 'delete_task.php?id=' + id_task;
+                }
+            }
+        </script>
+
     </div>
 </body>
 </html>
