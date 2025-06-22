@@ -32,6 +32,10 @@ body {
     height: 30%;
 }
 
+#logo h2{
+    color: #fff;
+}
+
 .nav{
     display: flex;
     flex-direction: column
