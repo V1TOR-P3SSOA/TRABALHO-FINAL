@@ -1,5 +1,6 @@
 <?php
-
+    ob_start();
+    session_start();
     include_once("conection.php");
 
     if (!isset($_SESSION)) {
@@ -18,7 +19,9 @@
         $observaçoes = trim($_POST['cuidados_gerais']);
 
         if (empty($nome_popular) || empty($nome_cientifico) || empty($tipo) || empty($ambiente) || empty($observaçoes)) {
-            $erro = "Preencha todos os campos!";
+            $_SESSION['erro'] = "Preencha todos os campos!";
+            header("Location: cadastro_planta_form.php");
+            exit;
         }
 
         if (empty($erro)) {
@@ -44,10 +47,5 @@
                 $aviso = "Erro: " . $aviso->getMessage();
             }
         }
-
-        // Se chegou até aqui, houve erro. Armazena o aviso na sessão e redireciona de volta.
-        $_SESSION['erro'] = $erro;
-        header('Location: cadastro_planta_form.php');
-        exit;
     }
 ?>
