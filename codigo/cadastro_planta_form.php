@@ -109,7 +109,7 @@
 
                         <div class="campo">
                             <label for="nome_cientifico_planta">Nome científico:</label>
-                            <input type="text" id="nome_cientifico_planta" name="nome_cientifico_planta">
+                            <input type="text" id="nome_cientifico_planta" name="nome_cientifico_planta" style="font-style: italic;">
                         </div>
 
                         <div class="campo">
