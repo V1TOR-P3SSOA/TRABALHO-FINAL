@@ -19,7 +19,7 @@
 
         if (!empty($nome) && !empty($nome_cientifico) && !empty($tipo) && !empty($ambiente) && !empty($obs)) {
             $stmt = $conexao->prepare("UPDATE plantas SET popular_name = ?, plant_type = ?, plant_environment = ?, plant_obs	 = ?, scientific_name = ? WHERE id_plant = ?");
-            $stmt->execute([$nome, $nome_cientifico, $tipo, $ambiente, $obs, $id]);
+            $stmt->execute([$nome, $tipo, $ambiente, $obs, $nome_cientifico, $id]);
             header("Location: cadastro_planta_form.php");
             exit;
         } else {
@@ -75,7 +75,7 @@
 
                 <div class="campo">
                     <label for="nome_cientifico_planta">Nome científico:</label>
-                    <input type="text" id="nome_cientifico_planta" name="nome_cientifico_planta" value="<?= htmlspecialchars($planta['scientific_name']) ?>">
+                    <input type="text" id="nome_cientifico_planta" name="nome_cientifico_planta" value="<?= htmlspecialchars($planta['scientific_name']) ?>" style="font-style: italic;">
                 </div>
 
                 <div class="campo">
