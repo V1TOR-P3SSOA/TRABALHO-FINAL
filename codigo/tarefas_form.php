@@ -98,11 +98,13 @@
                                 </div>
                             </div> 
                         </div>
-
+                </div>
+                <div id="dados">
                         <div class="campo">
                             <label for="planta_selecionada">ID da planta:</label>
                             <input type="number" id="planta_selecionada" name="planta_selecionada">
                         </div>
+
                         <div class="campo">
                             <label for="descricao_task">Descrição da tarefa: </label>
                             <input type="text" id="descricao_task" name="descricao_task">
@@ -132,7 +134,7 @@
                                 <option value="Concluída">Concluída</option>
                             </select>
                         </div>
-                        
+                            
                         <div id="botao_registro">
                             <button type="submit">Registar</button>
                         </div>
