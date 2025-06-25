@@ -37,14 +37,14 @@ body {
   flex: 1;
   display: flex;
   justify-content: space-evenly;
-  gap: 1%;
+  gap: 2%;
   margin: 15vh auto;
   padding: 0 1%;
   box-sizing: border-box;
 }
 
 #cadastro_task_container {
-  width: 35%;
+  width: 40%;
   background-color: #A4C2A5;
   padding: 15px;
   border-radius: 5px;
@@ -64,8 +64,6 @@ body {
   border: 1px solid transparent;
   border-bottom: 1px solid #000;
   font-size: small;
-  margin: 2px;
-  padding: 2px;
 }
 
 #titulo h2 {
@@ -136,7 +134,7 @@ body {
 
 .campo {
   background-color: #F5F5F5;
-  width: 95%;
+  width: 96%;
   margin: 10px 2px;
   border-radius: 5px;
   padding: 10px;
