@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="campo">
-                    <label for="user_password">Senha</label>
+                    <label for="user_password">Senha (no mínimo 6 caracteres)</label>
                     <input type="password" name="user_password" id="user_password" placeholder="Ex.:12345">
                 </div>
                 
