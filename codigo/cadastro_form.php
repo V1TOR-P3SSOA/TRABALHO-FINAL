@@ -2,11 +2,8 @@
     session_start();
     $aviso = '';
     if (isset($_SESSION['aviso'])) {
-
         $aviso = $_SESSION['aviso'];
-
         unset($_SESSION['aviso']);
-        
     }
 ?>
 
@@ -36,13 +33,9 @@
                 <h1 id="titulo_cadastro">Cadastro</h1>
 
                 <div id="aviso">
-                    <?php
-                        if(isset($aviso)){
-                            if (!empty($aviso)) {
-                                echo $aviso;
-                            }
-                        }
-                    ?>
+                    <?php if (!empty($aviso)): ?>
+                        <p><?= htmlspecialchars($aviso) ?></p>
+                    <?php endif; ?>
                 </div>
 
                 <div class="campo">
