@@ -38,7 +38,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   gap: 1%;
-  margin: 20px auto;
+  margin: 15vh auto;
   padding: 0 1%;
   box-sizing: border-box;
 }
