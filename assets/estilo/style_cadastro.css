@@ -145,3 +145,7 @@ body {
 #decoracao img{
   width: 600px;
 }
+
+#aviso p{
+  color: #ff0000;
+}
