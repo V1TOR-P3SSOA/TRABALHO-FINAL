@@ -38,7 +38,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 2%;               
-    margin: 20px 0;            
+    margin: 15vh 0;            
     width: 100%;
     box-sizing: border-box;
     padding: 0 2%;
@@ -47,7 +47,7 @@ body {
 #cadastro_planta_container {
     width: 70%;
     height: auto;
-    max-height: 570px;
+    max-height: auto;
     background-color: #A4C2A5;
     padding: 15px;
     border-radius: 5px;
@@ -126,7 +126,7 @@ body {
 }
 .campo{
     background-color: #F5F5F5;
-    width: 100%;
+    width: 97%;
     margin: 10px;
     margin-left: 2px;
     border-radius: 5px;
