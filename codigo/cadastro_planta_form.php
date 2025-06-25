@@ -5,7 +5,7 @@
     }
 
     if(!isset($_SESSION['id_user'])){
-        header('Location: codigo/login_form.php');
+        header('Location: login_form.php');
     }
 
     $aviso = '';
@@ -19,7 +19,6 @@
 ?>
 
 <?php
-
     $erro = '';
     if (isset($_SESSION['erro'])) {
 
