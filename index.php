@@ -1,11 +1,29 @@
 <?php
-
-    if(!isset($_SESSION)){
+    if (!isset($_SESSION)) {
         session_start();
     }
 
-    if(!isset($_SESSION['id_user'])){
+    if (!isset($_SESSION['id_user'])) {
         header('Location: codigo/login_form.php');
+        exit;
+    }
+
+    include_once("codigo/conection.php");
+
+    $id = $_SESSION['id_user'];
+
+    try {
+        $stmt = $conexao->prepare("SELECT user_name FROM usuarios WHERE id_user = :id");
+        $stmt->bindValue(':id', $id);
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        } else {
+            $user = ['user_name' => 'Usuário'];
+        }
+    } catch (PDOException $e) {
+        $user = ['user_name' => 'Erro'];
     }
 ?>
 
@@ -35,6 +53,12 @@
             </div>
             
         </div>
+
+        <div id="apresentacao">
+            <h1>Olá! <?= htmlspecialchars($user['user_name']) ?>...</h1>
+            <p>O que temos para hoje?</p>
+        </div>
+
 
         <a href="codigo/logout.php">voltar para o login</a>
     </div>
